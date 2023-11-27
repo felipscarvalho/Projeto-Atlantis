@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav__dummy"></div>
+    <nav id="nav" class="nav__container">
+        <div class="right__container">
+            <div class="logo__container">
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="">
+                <h1>Projeto Atlantis</h1>
+            </div>
+            <img class="hamburguer" onclick={toggleNav()} src="{% static 'images/hamburguer.png' %}" alt="">
+        </div>
+        <div class="middle__container">
+            <ul class="middle__options">
+                <a href="#">
+                    <li>Início</li>
+                </a>
+                <a href="#">
+                    <li>Espécies</li>
+                </a>
+                <a href="#">
+                    <li>Quem Somos</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+    <script>
+        let navStatus = false;
+
+        function toggleNav() {
+            if (navStatus === false) {
+                document.querySelector('#nav').style.maxHeight = '512px'
+
+                navStatus = true
+            } else {
+                document.querySelector('#nav').style.maxHeight = '64px'
+
+                navStatus = false
+            }
+        }
+    </script>
+</body>
+</html>
