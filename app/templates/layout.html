@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/layout.css' %}">
-    <title>Document</title>
+    {% block header %}      
+    {% endblock header %}
 </head>
 <body>
     <div class="nav__dummy"></div>
@@ -34,20 +35,6 @@
     </nav>
     {% block content %}
     {% endblock content %}
-    <script>
-        let navStatus = false;
-
-        function toggleNav() {
-            if (navStatus === false) {
-                document.querySelector('#nav').style.maxHeight = '512px'
-
-                navStatus = true
-            } else {
-                document.querySelector('#nav').style.maxHeight = '64px'
-
-                navStatus = false
-            }
-        }
-    </script>
+    <script src="{% static 'js/layout.js' %}"></script>
 </body>
 </html>

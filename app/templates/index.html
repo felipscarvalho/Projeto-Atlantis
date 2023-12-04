@@ -1,5 +1,23 @@
 {% extends "layout.html" %}
+{% load static %}
+
+{% block header %}
+<title>Início - Atlantis</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock header %}
 
 {% block content %}
-<h1>aaaa</h1>
+<div class="landing__page__image__container">
+    <img class="mobile__langing__page__image" src="{% static 'images/mobile_landing_page.png' %}" alt="">
+    <div class="landing__page__call__container">
+        <div class="landing__page__call__text__container">
+            <div>
+                <h1 class="landing__page__call__title">Vamos Salvar Nossos Animais!</h1>
+                <p class="landing__page__call__text">Proteger a vida marinha é um dever de todos, descubra mais sobre a causa e contribua também!</p>
+            </div>
+            <button class="landing__page__call__button">Explorar</button>
+        </div>
+    </div>
+    <img class="langing__page__image" src="{% static 'images/landing_page.png' %}" alt="">
+</div>
 {% endblock content %}
