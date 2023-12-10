@@ -10,7 +10,7 @@ class StatusOptions(models.IntegerChoices):
 
 class Species(models.Model):
     image = models.ImageField(upload_to='animals/',
-                              default='defaults/animal_default.png')
+                              default='defaults/animal_default.jpg')
     name = models.CharField(max_length=255, verbose_name='Nome')
     scientific_name = models.CharField(
         max_length=255, verbose_name='Nome Científico')

@@ -2,27 +2,13 @@
 {% load static %}
 
 {% block header %}
-<title>Início - Atlantis</title>
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<title>Atlantis - Espécies</title>
+<link rel="stylesheet" href="{% static 'css/species.css' %}">
 {% endblock header %}
 
 {% block content %}
-<div class="landing__page__image__container">
-    <img class="mobile__langing__page__image" src="{% static 'images/mobile_landing_page.png' %}" alt="">
-    <div class="landing__page__call__container">
-        <div class="landing__page__call__text__container">
-            <div>
-                <h1 class="landing__page__call__title">Vamos Salvar Nossos Animais!</h1>
-                <p class="landing__page__call__text">Proteger a vida marinha é um dever de todos, descubra mais sobre a causa e contribua também!</p>
-            </div>
-            <a href="#last-species"><button class="landing__page__call__button">Explorar</button></a>
-        </div>
-    </div>
-    <img class="langing__page__image" src="{% static 'images/landing_page.png' %}" alt="">
-</div>
-
-<div class="last__species">
-    <h1 id="last-species">Últimas Espécies</h1>
+<div class="species">
+    <h1 id="last-species">Espécies</h1>
     <div>
         {% for specie in species %}
           <div class="specie__content__block">
@@ -54,6 +40,5 @@
           </div>
         {% endfor %}
     </div>
-    <a href="/especies"><button class="species__button">Ver Mais</button></a>
 </div>
 {% endblock content %}
