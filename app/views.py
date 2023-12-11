@@ -14,3 +14,7 @@ def species(request):
     species = Species.objects.all().reverse()
 
     return render(request, 'species.html', {'species': species})
+
+
+def aboutus(request):
+    return render(request, 'aboutus.html')
