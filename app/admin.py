@@ -13,8 +13,8 @@ class DisastersAdmin(admin.ModelAdmin):
 
 
 class OrganizationsAdmin(admin.ModelAdmin):
-    list_display = ['id', 'link', 'instagram',
-                    'instagram_link', 'title', 'description']
+    list_display = ['id', 'title', 'link', 'instagram',
+                    'instagram_link', 'description']
 
 
 admin.site.register(Species, SpeciesAdmin)
