@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block header %}
+<title>Início - Atlantis</title>
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock header %}
+
+{% block content %}
+<div class="landing__page__image__container">
+    <img class="mobile__langing__page__image" src="{% static 'images/mobile_landing_page.png' %}" alt="">
+    <div class="landing__page__call__container">
+        <div class="landing__page__call__text__container">
+            <div>
+                <h1 class="landing__page__call__title">Vamos Salvar Nossos Animais!</h1>
+                <p class="landing__page__call__text">Proteger a vida marinha é um dever de todos, descubra mais sobre a causa e contribua também!</p>
+            </div>
+            <a href="#simple-call"><button class="landing__page__call__button">Explorar</button></a>
+        </div>
+    </div>
+    <img class="langing__page__image" src="{% static 'images/landing_page.png' %}" alt="">
+</div>
+
+<div id="simple-call" class="simple__call__container">
+    <h1 class="call__title">O Homem Como Destruidor da Vida Marinha</h1>
+    <p class="call__text">
+        O mundo está passando por diversas catástrofes ambientais causadas principalmente pelo homem que estão afetando diretamente a vida marinha. Pode-se observar uma consequência da ação do homem no fenômeno chamado de eutrofização. Esse fenômeno ocorre devido à grande quantidade de poluição nos oceanos e rios, que gera uma grande quantidade de nutrientes na superfície, dessa forma, impedindo a entrada de luz para que as plantas façam fotossíntese, diminuindo o nível de oxigênio nos mares. Isso acaba provocando a morte dos animais que vivem nesse ambiente. 
+    </p>
+    <p class="call__text">
+        Além da tentativa sem fim de sobrevivência no fundo do mar, atualmente os peixes, tartarugas e diversos outros animais também têm que lutar para sobreviver a mais um risco causado pelo homem. A pesca predatória é responsável por acabar com a vida de milhares de animais ainda filhotes, atingindo famílias de diversas espécies marinhas e impactando diretamente no risco de extinção desses animais.
+    </p>
+</div>
+
+<div class="disasters">
+    <h1>Desastres Naturais no Mundo</h1>
+    <div class="disasters__container">
+        {% for disaster in disasters %}
+            <div class="disaster__banner">
+                <img class="disaster__image" src="{% get_media_prefix %}{{ disaster.image }}" alt="">
+                <div class="disaster__text">
+                    <h2>{{disaster.title}}</h2>
+                    <p>{{disaster.description}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/especies"><button class="default__button">Ver Mais</button></a>
+</div>
+
+<div class="last__species">
+    <h1 id="last-species">Últimas Espécies</h1>
+    <div>
+        {% for specie in species %}
+          <div class="specie__content__block">
+            <img class="specie__image" src="{% get_media_prefix %}{{ specie.image }}" alt="Imagem Ilustrativa">
+            <div class="specie__full__detais">
+                <div class="specie__details__header">
+                    <div>
+                        <h2>{{specie.name}}</h2>
+                        <p class="specie__scientific__name">{{specie.scientific_name}}</p>
+                        {% if specie.status %}
+                            <div class="threatened__with__extinction">
+                                <p>Ameaçado de Extinção</p>   
+                            </div>
+                        {% else %}
+                            <div class="extinct">
+                                <p>Extinto</p>   
+                            </div>     
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="specie__details__description">
+                    <h3>Descrição</h3>
+                    <p>{{specie.description}}</p>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+    <a href="/especies"><button class="default__button">Ver Mais</button></a>
+</div>
+
+<div class="simple__call__container">
+    <h1 class="call__title">Preservação: O Caminho Para Diminuir os Impactos Causados Pelo Ser Humano</h1>
+    <p class="call__text">
+        É possível destacar como impacto antropológico a ampliação da exploração em busca de minerais preciosos no leito marinho, uma vez que as grandes empresas sempre buscam apenas o superlucro, sem dar a mínima às milhares de vidas dos organismos que vivem nessa área e que serão diretamente atingidas pela busca incessante do faturamento às custas da natureza.
+    </p>
+    <p class="call__text">
+        Nessa perspectiva, se são as ações do homem que prejudicam o oceano, então cabe ao mesmo amenizar os impactos atuando na preservação do ambiente marinho, como o Projeto Tamar que, desde a década de 80, realiza o manejo, conservação e pesquisa das tartarugas marinhas, além de educação ambiental e ações na busca do desenvolvimento sustentável nas comunidades onde atua.
+    </p>
+</div>
+
+<div class="contributions">
+    <h1>Desastres Naturais no Mundo</h1>
+    <div class="contributions__container">
+        {% for contribution in contributions %}
+            <div class="contribution__banner">
+                <img class="contribution__image" src="{% get_media_prefix %}{{ contribution.image }}" alt="">
+                <div class="contribution__text">
+                    <div class="contribution__text__header">
+                        <h2>{{contribution.title}}</h2>
+                        <a href="{{contribution.instagram_link}}" target="_blank"><p>{{contribution.instagram}}</p></a>
+                    </div>
+                    <p>{{contribution.description}}</p>
+                    <a href="{{contribution.link}}" target="_blank"><button class="default__button">Quero Contribuir!</button></a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

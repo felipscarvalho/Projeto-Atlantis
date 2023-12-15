@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block header %}
+<title>Atlantis - Espécies</title>
+<link rel="stylesheet" href="{% static 'css/species.css' %}">
+{% endblock header %}
+
+{% block content %}
+<div class="species">
+    <h1 id="last-species">Espécies</h1>
+    <div>
+        {% for specie in species %}
+          <div class="specie__content__block">
+            <img class="specie__image" src="{% get_media_prefix %}{{ specie.image }}" alt="Imagem Ilustrativa">
+            <div class="specie__full__detais">
+                <div class="specie__details__header">
+                    <div>
+                        <h3>Nome</h3>
+                        <p>{{specie.name}}</p>
+                    </div>
+                    <div>
+                        <h3>Nome Científico</h3>
+                        <p>{{specie.scientific_name}}</p>
+                    </div>
+                    <div>
+                        <h3>Status</h3>
+                        {% if specie.status %}
+                            <p>Ameaçado de Extinção</p>   
+                        {% else %}
+                            <p>Extinto</p>       
+                        {% endif %}
+                    </div>
+                </div>
+                <div>
+                    <h3>Descrição</h3>
+                    <p>{{specie.description}}</p>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block header %}
+<title>Atlantis - Sobre Nós</title>
+<link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+{% endblock header %}
+
+{% block content %}
+<div class="aboutus__container">
+    <h1>Quem Somos</h1>
+    <div class="members__container">
+        <div class="member__container">
+            <img class="member__photo" src="{% static 'images/members/felipe.png' %}" alt="Felipe">
+            <h2>Felipe Carvalho</h2>
+        </div>
+        <div class="member__container">
+            <img class="member__photo" src="{% static 'images/members/jayane.jpg' %}" alt="Jayane">
+            <h2>Jayane Ribeiro</h2>
+        </div>
+        <div class="member__container">
+            <img class="member__photo" src="{% static 'images/members/karol.jpg' %}" alt="Karol">
+            <h2>Karol Sthefanny</h2>
+        </div>
+        <div class="member__container">
+            <img class="member__photo" src="{% static 'images/members/illy.jpg' %}" alt="Illy">
+            <h2>Illy Gabrielly</h2>
+        </div>
+        <div class="member__container">
+            <img class="member__photo" src="{% static 'images/members/fabiana.jpg' %}" alt="Fabiana">
+            <h2>Fabiana Santiago</h2>
+        </div>
+    </div>
+</div>
+{% endblock content %}

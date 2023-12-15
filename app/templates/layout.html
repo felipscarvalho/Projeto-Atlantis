@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.ico' %}">
+    {% block header %}      
+    {% endblock header %}
+</head>
+<body>
+    <div class="nav__dummy"></div>
+    <nav id="nav" class="nav__container">
+        <div class="right__container">
+            <div class="logo__container">
+                <img class="logo" src="{% static 'images/logo.png' %}" alt="">
+                <h1>Projeto Atlantis</h1>
+            </div>
+            <img class="hamburguer" onclick={toggleNav()} src="{% static 'images/hamburguer.png' %}" alt="">
+        </div>
+        <div class="middle__container">
+            <ul class="middle__options">
+                <a href="/">
+                    <li>Início</li>
+                </a>
+                <a href="/especies">
+                    <li>Espécies</li>
+                </a>
+                <a href="/aboutus">
+                    <li>Sobre Nós</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+    <script src="{% static 'js/layout.js' %}"></script>
+</body>
+</html>
