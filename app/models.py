@@ -17,3 +17,18 @@ class Species(models.Model):
     status = models.IntegerField(
         choices=StatusOptions.choices, verbose_name='Status')
     description = models.TextField(verbose_name='Descrição')
+
+
+class Disasters(models.Model):
+    image = models.ImageField(upload_to='disasters/')
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+
+
+class Organizations(models.Model):
+    image = models.ImageField(upload_to='disasters/')
+    title = models.CharField(max_length=255)
+    link = models.CharField(max_length=512)
+    instagram = models.CharField(max_length=512)
+    instagram_link = models.CharField(max_length=512)
+    description = models.TextField()
