@@ -62,7 +62,25 @@
 /* Calls */
 
 .simple__call__container {
+    position: relative;
     margin: 4rem 6rem;
+}
+
+.call__image {
+    position: absolute;
+    height: 80%;
+    width: auto;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+}
+
+.left__call {
+    left: -4%;
+}
+
+.right__call {
+    right: -4%;
 }
 
 .call__title {
@@ -289,6 +307,14 @@
 
     .simple__call__container {
         margin: 2rem 1rem;
+    }
+
+    .left__call {
+        left: -10%;
+    }
+
+    .right__call {
+        right: -10%;
     }
 
     .specie__image {
