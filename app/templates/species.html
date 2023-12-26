@@ -4,41 +4,56 @@
 {% block header %}
 <title>Atlantis - Espécies</title>
 <link rel="stylesheet" href="{% static 'css/species.css' %}">
+<link rel="stylesheet" href="{% static 'css/disasters.css' %}">
 {% endblock header %}
 
 {% block content %}
-<div class="species">
-    <h1 id="last-species">Espécies</h1>
-    <div>
-        {% for specie in species %}
-          <div class="specie__content__block">
-            <img class="specie__image" src="{% get_media_prefix %}{{ specie.image }}" alt="Imagem Ilustrativa">
-            <div class="specie__full__detais">
-                <div class="specie__details__header">
-                    <div>
-                        <h3>Nome</h3>
-                        <p>{{specie.name}}</p>
-                    </div>
-                    <div>
-                        <h3>Nome Científico</h3>
-                        <p>{{specie.scientific_name}}</p>
-                    </div>
-                    <div>
-                        <h3>Status</h3>
-                        {% if specie.status %}
-                            <p>Ameaçado de Extinção</p>   
-                        {% else %}
-                            <p>Extinto</p>       
-                        {% endif %}
-                    </div>
-                </div>
-                <div>
-                    <h3>Descrição</h3>
-                    <p>{{specie.description}}</p>
+<div id="disasters" class="disasters">
+    <h1>Desastres Naturais no Mundo</h1>
+    <div class="disasters__container">
+        {% for disaster in disasters %}
+            <div class="disaster__banner">
+                <img class="disaster__image" src="{% get_media_prefix %}{{ disaster.image }}" alt="">
+                <div class="disaster__text">
+                    <h2>{{disaster.title}}</h2>
+                    <p>{{disaster.description}}</p>
                 </div>
             </div>
-          </div>
         {% endfor %}
+    </div>
+</div>
+
+<div id="species" class="species">
+    <div class="last__species">
+        <h1 id="last-species">Espécies</h1>
+        <div>
+            {% for specie in species %}
+              <div class="specie__content__block">
+                <img class="specie__image" src="{% get_media_prefix %}{{ specie.image }}" alt="Imagem Ilustrativa">
+                <div class="specie__full__detais">
+                    <div class="specie__details__header">
+                        <div>
+                            <h2>{{specie.name}}</h2>
+                            <p class="specie__scientific__name">{{specie.scientific_name}}</p>
+                            {% if specie.status %}
+                                <div class="threatened__with__extinction">
+                                    <p>Ameaçado de Extinção</p>   
+                                </div>
+                            {% else %}
+                                <div class="extinct">
+                                    <p>Extinto</p>   
+                                </div>     
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="specie__details__description">
+                        <h3>Descrição</h3>
+                        <p>{{specie.description}}</p>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock content %}

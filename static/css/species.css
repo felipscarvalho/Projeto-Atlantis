@@ -2,66 +2,85 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
     margin: 2rem 6rem;
 }
 
 .specie__content__block {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 1.5rem;
     background-color: #fff;
-    border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin: 1rem 0;
-    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    margin: 1.5rem 0;
+
 }
 
 .specie__image {
-    height: 8rem;
-    width: auto;
-    border-radius: 8px;
+    height: 16rem;
+    width: 16rem;
+    border-radius: 12px 0 0 12px;
+    object-fit: cover;
+}
+
+.specie__scientific__name {
+    font-weight: bold;
+    color: #a0a0a0;
+    margin: 0 0 .75rem 0;
+}
+
+.extinct {
+    color: #fff;
+    background-color: #fc5751;
+    padding: .75rem 1.25rem;
+    border-radius: 6px;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.threatened__with__extinction {
+    color: #fff;
+    background-color: #fce851;
+    padding: .75rem 1.25rem;
+    border-radius: 6px;
+    width: fit-content;
+    font-weight: bold;
 }
 
 .specie__full__detais {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .75rem;
+    margin: 1.5rem 1.5rem 1.5rem 0;
 }
 
-.specie__details__header {
-    display: flex;
-    gap: 2rem;
+.specie__details__description h3 {
+    margin-bottom: .25rem;
 }
 
-.species__button {
-    margin-left: auto;
-    margin-right: auto;
-    border: none;
-    color: #fff;
-    border-radius: 8px;
-    padding: 1vh 2vw;
-    font-size: 2.25vh;
-    transition: .25s ease;
-    background: linear-gradient(40deg, rgba(0,175,207,1) 0%, rgba(243,133,208,1) 100%);
-}
-
-.species__button:hover {
-    cursor: pointer;
-    transform: translate(0, -5px);
+.specie__details__description p {
+    text-align: justify;
 }
 
 @media (width < 768px) {
     .specie__image {
         width: 100%;
         height: auto;
-        border-radius: 8px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .specie__full__detais {
+        margin: 0 1.5rem 1.5rem 1.5rem;
     }
     
     .specie__content__block {
         flex-direction: column;
+        margin: 2.5rem 0;
     }
 
-    .last__species {
+    .species {
         margin: 2rem 1rem;
+        gap: 0;
     }
 }

@@ -22,6 +22,7 @@
 </div>
 
 <div id="simple-call" class="simple__call__container">
+    <img class="call__image left__call" src="{% static 'images/details/baleia.png' %}" alt="whale">
     <h1 class="call__title">O Homem Como Destruidor da Vida Marinha</h1>
     <p class="call__text">
         O mundo está passando por diversas catástrofes ambientais causadas principalmente pelo homem que estão afetando diretamente a vida marinha. Pode-se observar uma consequência da ação do homem no fenômeno chamado de eutrofização. Esse fenômeno ocorre devido à grande quantidade de poluição nos oceanos e rios, que gera uma grande quantidade de nutrientes na superfície, dessa forma, impedindo a entrada de luz para que as plantas façam fotossíntese, diminuindo o nível de oxigênio nos mares. Isso acaba provocando a morte dos animais que vivem nesse ambiente. 
@@ -44,7 +45,18 @@
             </div>
         {% endfor %}
     </div>
-    <a href="/especies"><button class="default__button">Ver Mais</button></a>
+    <a href="/informacoes#disasters"><button class="default__button">Ver Mais</button></a>
+</div>
+
+<div class="simple__call__container">
+    <img class="call__image right__call" src="{% static 'images/details/agua_viva.png' %}" alt="animal">
+    <h1 class="call__title">Preservação: O Caminho Para Diminuir os Impactos Causados Pelo Ser Humano</h1>
+    <p class="call__text">
+        É possível destacar como impacto antropológico a ampliação da exploração em busca de minerais preciosos no leito marinho, uma vez que as grandes empresas sempre buscam apenas o superlucro, sem dar a mínima às milhares de vidas dos organismos que vivem nessa área e que serão diretamente atingidas pela busca incessante do faturamento às custas da natureza.
+    </p>
+    <p class="call__text">
+        Nessa perspectiva, se são as ações do homem que prejudicam o oceano, então cabe ao mesmo amenizar os impactos atuando na preservação do ambiente marinho, como o Projeto Tamar que, desde a década de 80, realiza o manejo, conservação e pesquisa das tartarugas marinhas, além de educação ambiental e ações na busca do desenvolvimento sustentável nas comunidades onde atua.
+    </p>
 </div>
 
 <div class="last__species">
@@ -77,21 +89,22 @@
           </div>
         {% endfor %}
     </div>
-    <a href="/especies"><button class="default__button">Ver Mais</button></a>
+    <a href="/informacoes#species"><button class="default__button">Ver Mais</button></a>
 </div>
 
 <div class="simple__call__container">
-    <h1 class="call__title">Preservação: O Caminho Para Diminuir os Impactos Causados Pelo Ser Humano</h1>
+    <img class="call__image left__call" src="{% static 'images/details/caranguejo.png' %}" alt="crab">
+    <h1 class="call__title">Como Podemos Ajudar?</h1>
     <p class="call__text">
-        É possível destacar como impacto antropológico a ampliação da exploração em busca de minerais preciosos no leito marinho, uma vez que as grandes empresas sempre buscam apenas o superlucro, sem dar a mínima às milhares de vidas dos organismos que vivem nessa área e que serão diretamente atingidas pela busca incessante do faturamento às custas da natureza.
+        Portanto, é necessário que a problemática seja abordada com o intuito de conscientizar a população, bem como propagar projetos que envolvam o tema e que ajudem na causa. Para além disso, as pessoas precisam ter acesso a informações concretas, que sejam transmitidos de forma direta e simplificada.
     </p>
     <p class="call__text">
-        Nessa perspectiva, se são as ações do homem que prejudicam o oceano, então cabe ao mesmo amenizar os impactos atuando na preservação do ambiente marinho, como o Projeto Tamar que, desde a década de 80, realiza o manejo, conservação e pesquisa das tartarugas marinhas, além de educação ambiental e ações na busca do desenvolvimento sustentável nas comunidades onde atua.
+        A ideia é que o website tenha interface simples e direta, os usuários poderão vizualizar as espécies que estão extintas ou em processo de extinção de forma clara e objetiva. Além disso, temos uma aba que exibe projetos que realizam a preservação e estudos acerca das espécies em risco de fato.
     </p>
 </div>
 
 <div class="contributions">
-    <h1>Desastres Naturais no Mundo</h1>
+    <h1>Causas Para Apoiar</h1>
     <div class="contributions__container">
         {% for contribution in contributions %}
             <div class="contribution__banner">
@@ -102,8 +115,8 @@
                         <a href="{{contribution.instagram_link}}" target="_blank"><p>{{contribution.instagram}}</p></a>
                     </div>
                     <p>{{contribution.description}}</p>
-                    <a href="{{contribution.link}}" target="_blank"><button class="default__button">Quero Contribuir!</button></a>
                 </div>
+                <a href="{{contribution.link}}" target="_blank"><button class="default__button">Quero Contribuir!</button></a>
             </div>
         {% endfor %}
     </div>

@@ -24,3 +24,8 @@
     margin: .5rem;
     object-fit: cover;
 }
+
+.member__function {
+    font-weight: bold;
+    color: #a0a0a0;
+}

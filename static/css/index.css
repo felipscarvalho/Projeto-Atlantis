@@ -62,7 +62,25 @@
 /* Calls */
 
 .simple__call__container {
+    position: relative;
     margin: 4rem 6rem;
+}
+
+.call__image {
+    position: absolute;
+    height: 80%;
+    width: auto;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+}
+
+.left__call {
+    left: -4%;
+}
+
+.right__call {
+    right: -4%;
 }
 
 .call__title {
@@ -210,6 +228,7 @@
     flex-direction: column;
     align-items: center;
     margin: 2rem 6rem;
+    gap: 2rem;
 }
 
 .contributions__container {
@@ -223,10 +242,14 @@
     flex-basis: 20rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
 }
 
 .contribution__text {
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 0 2rem;
 }
 
 .contribution__text p {
@@ -249,6 +272,10 @@
 
 .contribution__text__header a:hover {
     color: #2081ff;
+}
+
+.contribution__button {
+    align-self: center;
 }
 
 @media (width < 1024px) {
@@ -288,6 +315,14 @@
 
     .simple__call__container {
         margin: 2rem 1rem;
+    }
+
+    .left__call {
+        left: -10%;
+    }
+
+    .right__call {
+        right: -10%;
     }
 
     .specie__image {

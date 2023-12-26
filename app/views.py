@@ -14,8 +14,9 @@ def index(request):
 
 def species(request):
     species = Species.objects.all().reverse()
+    disasters = Disasters.objects.all().reverse()
 
-    return render(request, 'species.html', {'species': species})
+    return render(request, 'species.html', {'species': species, 'disasters': disasters})
 
 
 def aboutus(request):

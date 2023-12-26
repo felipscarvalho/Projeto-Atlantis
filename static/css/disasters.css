@@ -1,0 +1,44 @@
+.disasters {
+    margin: 2rem 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.disasters h1 {
+    text-align: center;
+}
+
+.disasters__container {
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.disaster__banner {
+    flex-grow: 1;
+    flex-basis: 20rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border-radius: 12px;
+}
+
+.disaster__text {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.disaster__text h2 {
+    margin-bottom: .5rem;
+}
+
+.disaster__image {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+@media (width < 768px) {
+    .disasters {
+        margin: 2rem 1rem;
+    }
+}
