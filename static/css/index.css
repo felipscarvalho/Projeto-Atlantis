@@ -242,10 +242,14 @@
     flex-basis: 20rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
 }
 
 .contribution__text {
-    padding: 1rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 0 2rem;
 }
 
 .contribution__text p {
@@ -268,6 +272,10 @@
 
 .contribution__text__header a:hover {
     color: #2081ff;
+}
+
+.contribution__button {
+    align-self: center;
 }
 
 @media (width < 1024px) {
